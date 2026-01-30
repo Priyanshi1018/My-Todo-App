@@ -1,0 +1,79 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  max-width: 620px;
+  margin: auto;
+  transition: 0.3s;
+  color: #222;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-link, .back-btn {
+  text-decoration: none;
+  padding: 8px 14px;
+  background: #222;
+  color: white;
+  border-radius: 8px;
+}
+
+.input-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+input, button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+ul { padding: 0; }
+
+li {
+  list-style: none;
+  padding: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 12px;
+  background: white;
+}
+
+/* 🌸 THEMES */
+.blush { background: #ffe4f1; }
+.sage { background: #e7f4ea; }
+.oceanic { background: #e3f2fd; }
+.sunbeam { background: #fff4cc; }
+.lavish { background: #f3e8ff; }
+.peachy { background: #ffe8dc; }
+.slate { background: #e5e7eb; }
+
+/* 🌑 DARK THEME FIX (BLACK TEXT ✔) */
+.midnight {
+  background: #1e1e1e;
+  color: #000;
+}
+
+.midnight li {
+  background: #f5f5f5;
+}
+
+/* THEME PAGE */
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
