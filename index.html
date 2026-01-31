@@ -1,33 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>My Todo</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Quicksand&family=Nunito&family=Playfair+Display&family=Montserrat&family=Raleway&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <header>
-    <h1>✨ My Todo App ✨</h1>
-    <a href="themes.html" class="theme-link">🎨 Themes</a>
-  </header>
+<body class="theme-blush font-poppins size-medium">
 
-  <section class="input-section">
-    <input type="text" id="todo-input" placeholder="What’s your next move?" />
-    <input type="date" id="todo-date" />
-    <input type="time" id="todo-time" />
-    <button id="add-btn">Add</button>
-  </section>
+<header>
+  <h1>My Todo List</h1>
+  <button id="settings-btn">⚙️</button>
+</header>
 
-  <section class="filters">
-    <button onclick="filterTodos('all')">All</button>
-    <button onclick="filterTodos('completed')">Done</button>
-    <button onclick="filterTodos('pending')">Pending</button>
-  </section>
+<!-- SETTINGS SIDEBAR -->
+<!-- RIGHT SIDEBAR SETTINGS -->
+<aside id="settings" class="settings-panel">
+  <h3>Settings</h3>
 
-  <ul id="todo-list"></ul>
+  <!-- THEMES -->
+  <div class="setting-group">
+    <h4>Themes</h4>
+    <button data-theme="blush">🌸 Blush Bloom</button>
+    <button data-theme="sage">🌿 Sage Calm</button>
+    <button data-theme="ocean">🌊 Ocean Breeze</button>
+    <button data-theme="lavender">🍇 Lavender Dream</button>
+    <button data-theme="sun">☀️ Sunbeam</button>
+    <button data-theme="coffee">☕ Coffee Mocha</button>
+    <button data-theme="night">🌙 Night Sky</button>
+    <button data-theme="peach">🍑 Peach Muse</button>
+    <button data-theme="mint">🍃 Mint Fresh</button>
+  </div>
 
-  <script src="script.js"></script>
+  <!-- FONTS -->
+  <div class="setting-group">
+    <h4>Fonts</h4>
+    <select id="font-select">
+      <option value="poppins">Poppins</option>
+      <option value="quicksand">Quicksand</option>
+      <option value="nunito">Nunito</option>
+      <option value="playfair">Playfair</option>
+      <option value="montserrat">Montserrat</option>
+      <option value="raleway">Raleway</option>
+    </select>
+
+    <select id="size-select">
+      <option value="small">Small</option>
+      <option value="medium" selected>Medium</option>
+      <option value="large">Large</option>
+    </select>
+
+    <input type="color" id="color-picker" title="Font color">
+  </div>
+
+  <!-- TODO FILTERS -->
+  <div class="setting-group">
+    <h4>Todos</h4>
+    <button id="filter-all">🔄 All Todos</button>
+    <button id="filter-pending">⏳ Pending Todos</button>
+    <button id="filter-done">✅ Done Todos</button>
+  </div>
+</aside>
+
+<!-- OVERLAY -->
+<div id="overlay" class="overlay hidden"></div>
+
+
+<!-- INPUT -->
+<div class="todo-input">
+  <input id="todo-input" placeholder="Add a task you want to finish 🌱">
+  <button id="add-btn">Add</button>
+</div>
+
+<!-- LIST -->
+<ul id="todo-list"></ul>
+
+<script src="script.js"></script>
 </body>
 </html>

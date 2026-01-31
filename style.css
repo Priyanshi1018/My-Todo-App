@@ -1,79 +1,176 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   padding: 20px;
-  max-width: 620px;
+  max-width: 720px;
   margin: auto;
-  transition: 0.3s;
-  color: #222;
+  transition: all 0.4s ease;
 }
 
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.theme-link, .back-btn {
-  text-decoration: none;
-  padding: 8px 14px;
-  background: #222;
-  color: white;
-  border-radius: 8px;
+/* SETTINGS */
+#settings {
+  background: rgba(255,255,255,0.95);
+  padding: 16px;
+  border-radius: 18px;
+  margin: 12px 0;
 }
 
-.input-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr auto;
+.hidden {
+  display: none;
+}
+
+.setting-group {
+  margin-bottom: 14px;
+}
+
+.setting-group button,
+.setting-group select,
+.setting-group input[type="color"] {
+  width: 100%;
+  margin: 6px 0;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* INPUT */
+.todo-input {
+  display: flex;
   gap: 10px;
   margin: 20px 0;
 }
 
-input, button {
-  padding: 10px;
-  border-radius: 8px;
+.todo-input input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 16px;
   border: none;
 }
 
-.filters {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
+.todo-input button {
+  padding: 12px 16px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
 }
 
-ul { padding: 0; }
+/* LIST */
+ul {
+  padding: 0;
+}
 
 li {
   list-style: none;
-  padding: 12px;
+  background: white;
+  padding: 14px;
+  border-radius: 18px;
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
-  border-radius: 12px;
-  background: white;
+  align-items: center;
 }
 
-/* 🌸 THEMES */
-.blush { background: #ffe4f1; }
-.sage { background: #e7f4ea; }
-.oceanic { background: #e3f2fd; }
-.sunbeam { background: #fff4cc; }
-.lavish { background: #f3e8ff; }
-.peachy { background: #ffe8dc; }
-.slate { background: #e5e7eb; }
-
-/* 🌑 DARK THEME FIX (BLACK TEXT ✔) */
-.midnight {
-  background: #1e1e1e;
-  color: #000;
+li small {
+  display: block;
+  font-size: 12px;
+  opacity: 0.7;
 }
 
-.midnight li {
-  background: #f5f5f5;
+li.done {
+  opacity: 0.6;
 }
 
-/* THEME PAGE */
-.theme-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+/* DELETE BUTTON */
+.delete-btn {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* THEMES */
+.theme-blush { background: #ffe4f1; color: #6a2a3a; }
+.theme-sage { background: #e7f4ea; color: #2f5a3f; }
+.theme-ocean { background: #e3f2fd; color: #0d47a1; }
+.theme-lavender { background: #f3e8ff; color: #4b2a6b; }
+.theme-sun { background: #fff4cc; color: #6b4e00; }
+.theme-coffee { background: #f1e7dc; color: #4e342e; }
+.theme-peach { background: #ffe8dc; color: #6b2e1f; }
+.theme-mint { background: #e6fffa; color: #065f46; }
+
+.theme-night {
+  background: #121212;
+  color: #f5f5f5;
+}
+.theme-night li {
+  background: #2a2a40;
+  color: #ffffff;
+}
+.theme-night #settings {
+  background: #24243a;
+}
+
+/* FONTS */
+.font-poppins { font-family: 'Poppins', sans-serif; }
+.font-quicksand { font-family: 'Quicksand', sans-serif; }
+.font-nunito { font-family: 'Nunito', sans-serif; }
+.font-playfair { font-family: 'Playfair Display', serif; }
+.font-montserrat { font-family: 'Montserrat', sans-serif; }
+.font-raleway { font-family: 'Raleway', sans-serif; }
+
+/* FONT SIZE */
+.size-small { font-size: 14px; }
+.size-medium { font-size: 16px; }
+.size-large { font-size: 18px; }
+
+/* RIGHT SLIDING SETTINGS PANEL */
+.settings-panel {
+  position: fixed;
+  top: 0;
+  right: -320px;          /* hidden by default */
+  width: 300px;
+  height: 100vh;
+  background: rgba(255,255,255,0.97);
+  padding: 20px;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+  transition: right 0.35s ease;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+/* WHEN OPEN */
+.settings-panel.open {
+  right: 0;
+}
+
+/* DARK THEME SETTINGS */
+.theme-night .settings-panel {
+  background: #24243a;
+  color: #f5f5f5;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 999;
+}
+
+.hidden {
+  display: none;
 }
