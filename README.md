@@ -1,18 +1,17 @@
-# My Todo App 
+# My Todo App 📝
 
-A simple and aesthetic Todo List application built using **HTML, CSS, and JavaScript**.
+A **beginner-friendly Todo List web app** built using **HTML, CSS, and JavaScript**.
 
 ## Features
-- Add and delete tasks
-- Mark tasks as completed
-- Set date & time reminders
-- Multiple aesthetic themes
-- Separate theme selection page
-- Data saved using localStorage
+- Add todos with a completion date
+- Pending and done todo lists
+- Motivational message on task completion
+- Settings sidebar with themes and fonts
+- Data stored using localStorage
 
 ## Technologies Used
 - HTML
 - CSS
 - JavaScript
 
-This project is created for learning and practice purposes.
+This project is created for learning and practice purposes!!
